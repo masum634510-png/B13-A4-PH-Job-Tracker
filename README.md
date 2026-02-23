@@ -13,7 +13,7 @@
 
 ## Dashboard
 - Website name and Create a dashboard like figma 
-- The section should be responsive for mobile devices. It is totally up to you. 
+- The section should be responsive for mobile devices. It is totally up to you.
 
 ## Available Jobs Section
 - A title on the left side, jobs count on the right side 
