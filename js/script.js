@@ -41,8 +41,8 @@ allCardsTitle.forEach(card => {
     if (notAppliedBtn.innerText !== 'INTERVIEW') {
       notAppliedBtn.innerText = 'INTERVIEW';
       notAppliedBtn.style.backgroundColor = 'white';
-      notAppliedBtn.style.color = 'cyan';
-      notAppliedBtn.style.border = '1px solid cyan';
+      notAppliedBtn.style.color = 'green';
+      notAppliedBtn.style.border = '1px solid green';
       updateCounts();
     }
   });
@@ -90,4 +90,4 @@ allCardsTitle.forEach(card => {
 }
 updateCounts() ;
 
- //----------part--01--end-------------
+ //----------part--02--end-------------
