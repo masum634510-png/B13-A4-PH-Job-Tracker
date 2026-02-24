@@ -32,17 +32,17 @@
         <div class="main-card grid sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-3 pt-5 gap-6">
             <div class="bg-gray-200 p-4 rounded-sm">
                 <p>Total</p>
-                <p id="total" class="text-black text-[20px] font-bold">8</p>
+                <p id="total-count" class="text-black text-[20px] font-bold">8</p>
             </div>
 
             <div class="bg-gray-200 p-4 rounded-sm">
                 <p>Interview</p>
-                <p id="interview" class="text-green-500 text-[20px] font-bold">0</p>
+                <p id="interview-count" class="text-green-500 text-[20px] font-bold">0</p>
             </div>
 
             <div class="bg-gray-200 p-4 rounded-sm">
                 <p>Rejected</p>
-                <p id="Rejected" class="text-red-500 text-[20px] font-bold">0</p>
+                <p id="rejected-count" class="text-red-500 text-[20px] font-bold">0</p>
             </div>
 
         </div>
@@ -55,9 +55,12 @@
             <div class="heading-left">
                 <h2 class="text-[30px] font-semibold mb-5">Available Jobs</h2>
                 <div class="grid md:grid-cols-2 gap-4 lg:grid-cols-3 ">
-                    <button id="allBtn" class="bg-gray-300 px-8 py-1 rounded-sm">All</button>
-                    <button id="interviewBtn" class="bg-gray-300 px-4 py-1 rounded-sm">Interview</button>
-                    <button id="rejectedBtn" class="bg-gray-300 px-4 py-1 rounded-sm">Rejected</button>
+                    <button id="allBtn" onclick="toggleStyle('allBtn')"
+                        class="bg-gray-300 px-8 py-1 rounded-sm">All</button>
+                    <button id="interviewBtn" onclick="toggleStyle('interviewBtn')"
+                        class="bg-gray-300 px-4 py-1 rounded-sm">Interview</button>
+                    <button id="rejectedBtn" onclick="toggleStyle('rejectedBtn')"
+                        class="bg-gray-300 px-4 py-1 rounded-sm">Rejected</button>
                 </div>
             </div>
 
@@ -67,333 +70,114 @@
 
         </div>
 
-        <!-- part 01 -->
-        <div class="card-title flex justify-between p-5 bg-gray-100 mt-5 rounded-sm ">
+        <div id="all-cards">
 
-            <div class="card-left">
-                <h2 class="text-2xl font-semibold mb-1">Mobile First Corp</h2>
-                <p>React Native Developer</p>
+            <!-- part 01 -->
+            <div class="card-title flex justify-between p-5 bg-gray-100 mt-5 rounded-sm ">
 
-                <br>
+                <div class="card-left">
+                    <h2 class="text-2xl font-semibold mb-1">Mobile First Corp</h2>
+                    <p>React Native Developer</p>
 
-                <p>Remote • Full-time • $130,000 - $175,000</p>
+                    <br>
 
-                <br>
+                    <p>Remote • Full-time • $130,000 - $175,000</p>
 
-                <button id="notPpplied" class=" px-2 py-1 rounded-sm bg-slate-300 mb-2">NOT APPLIED</button>
-                <p>Build cross-platform mobile applications using React Native. Work on products used by millions of
-                    users worldwide.</p>
+                    <br>
 
-                <br>
+                    <button class="not-applied-btn px-2 py-1 rounded-sm bg-slate-300 mb-2">NOT APPLIED</button>
+                    <p>Build cross-platform mobile applications using React Native. Work on products used by millions of
+                        users worldwide.</p>
 
-                <div class="btn flex gap-4">
-                    <button id="interview"
-                        class="border border-green-500 px-2 py-1 rounded-sm text-green-400">INTERVIEW</button>
-                    <button id="rejected"
-                        class="border border-red-500 px-2 py-1 rounded-sm text-red-400">REJECTED</button>
+                    <br>
+
+                    <div class="btn flex gap-4">
+                        <button class="interview-btn border border-green-500 px-2 py-1 rounded-sm text-green-400">INTERVIEW</button>
+                        <button class="rejected-btn border border-red-500 px-2 py-1 rounded-sm text-red-400">REJECTED</button>
+                    </div>
                 </div>
-            </div>
 
-            <div class="card-right">
-                <i class="fa-regular fa-trash-can"></i>
-            </div>
-
-        </div>
-        <!-- part 02 -->
-        <div class="card-title flex justify-between p-5 bg-gray-100 mt-5 rounded-sm ">
-
-            <div class="card-left">
-                <h2 class="text-2xl font-semibold mb-1">WebFlow Agency</h2>
-                <p>Web Designer & Developer</p>
-
-                <br>
-
-                <p>Los Angeles, CA • Part-time • $80,000 - $120,000</p>
-
-                <br>
-
-                <button id="notPpplied" class=" px-2 py-1 rounded-sm bg-slate-300 mb-2">NOT APPLIED</button>
-                <p>Create stunning web experiences for high-profile clients. Must have portfolio and experience with
-                    modern web design trends.</p>
-
-                <br>
-
-                <div class="btn flex gap-4">
-                    <button id="interview"
-                        class="border border-green-500 px-2 py-1 rounded-sm text-green-400">INTERVIEW</button>
-                    <button id="rejected"
-                        class="border border-red-500 px-2 py-1 rounded-sm text-red-400">REJECTED</button>
+                <div class="card-right">
+                    <i class="fa-regular fa-trash-can"></i>
                 </div>
+
             </div>
+            <!-- part 02 -->
+              <div class="card-title flex justify-between p-5 bg-gray-100 mt-5 rounded-sm ">
 
-            <div class="card-right">
-                <i class="fa-regular fa-trash-can"></i>
-            </div>
+                <div class="card-left">
+                    <h2 class="text-2xl font-semibold mb-1">Mobile First Corp</h2>
+                    <p>React Native Developer</p>
 
-        </div>
-        <!-- part 03 -->
-        <div class="card-title flex justify-between p-5 bg-gray-100 mt-5 rounded-sm ">
+                    <br>
 
-            <div class="card-left">
-                <h2 class="text-2xl font-semibold mb-1">DataViz Solutions</h2>
-                <p>Data Visualization Specialist</p>
+                    <p>Remote • Full-time • $130,000 - $175,000</p>
 
-                <br>
+                    <br>
 
-                <p>Boston, MA • Full-time • $125,000 - $165,000</p>
+                    <button class="not-applied-btn px-2 py-1 rounded-sm bg-slate-300 mb-2">NOT APPLIED</button>
+                    <p>Build cross-platform mobile applications using React Native. Work on products used by millions of
+                        users worldwide.</p>
 
-                <br>
+                    <br>
 
-                <button id="notPpplied" class=" px-2 py-1 rounded-sm bg-slate-300 mb-2">NOT APPLIED</button>
-                <p>Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong
-                    analytical thinking.</p>
-
-                <br>
-
-                <div class="btn flex gap-4">
-                    <button id="interview"
-                        class="border border-green-500 px-2 py-1 rounded-sm text-green-400">INTERVIEW</button>
-                    <button id="rejected"
-                        class="border border-red-500 px-2 py-1 rounded-sm text-red-400">REJECTED</button>
+                    <div class="btn flex gap-4">
+                        <button class="interview-btn border border-green-500 px-2 py-1 rounded-sm text-green-400">INTERVIEW</button>
+                        <button class="rejected-btn border border-red-500 px-2 py-1 rounded-sm text-red-400">REJECTED</button>
+                    </div>
                 </div>
-            </div>
 
-            <div class="card-right">
-                <i class="fa-regular fa-trash-can"></i>
-            </div>
-
-        </div>
-        <!-- part 04 -->
-        <div class="card-title flex justify-between p-5 bg-gray-100 mt-5 rounded-sm ">
-
-            <div class="card-left">
-                <h2 class="text-2xl font-semibold mb-1">CloudFirst Inc</h2>
-                <p>Backend Developer</p>
-
-                <br>
-
-                <p>Seattle, WA • Full-time • $140,000 - $190,000</p>
-
-                <br>
-
-                <button id="notPpplied" class=" px-2 py-1 rounded-sm bg-slate-300 mb-2">NOT APPLIED</button>
-                <p>Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
-                
-                <br>
-
-                <div class="btn flex gap-4">
-                    <button id="interview"
-                        class="border border-green-500 px-2 py-1 rounded-sm text-green-400">INTERVIEW</button>
-                    <button id="rejected"
-                        class="border border-red-500 px-2 py-1 rounded-sm text-red-400">REJECTED</button>
+                <div class="card-right">
+                    <i class="fa-regular fa-trash-can"></i>
                 </div>
+
             </div>
+            <!-- part 03 -->
+            <div class="card-title flex justify-between p-5 bg-gray-100 mt-5 rounded-sm ">
 
-            <div class="card-right">
-                <i class="fa-regular fa-trash-can"></i>
-            </div>
+                <div class="card-left">
+                    <h2 class="text-2xl font-semibold mb-1">Mobile First Corp</h2>
+                    <p>React Native Developer</p>
 
-        </div>
-        <!-- part 05 -->
-        <div class="card-title flex justify-between p-5 bg-gray-100 mt-5 rounded-sm ">
+                    <br>
 
-            <div class="card-left">
-                <h2 class="text-2xl font-semibold mb-1">Innovation Labs</h2>
-                <p>UI/UX Engineer</p>
+                    <p>Remote • Full-time • $130,000 - $175,000</p>
 
-                <br>
+                    <br>
 
-                <p>Austin, TX • Full-time • $110,000 - $150,000</p>
+                    <button class="not-applied-btn px-2 py-1 rounded-sm bg-slate-300 mb-2">NOT APPLIED</button>
+                    <p>Build cross-platform mobile applications using React Native. Work on products used by millions of
+                        users worldwide.</p>
 
-                <br>
+                    <br>
 
-                <button id="notPpplied" class=" px-2 py-1 rounded-sm bg-slate-300 mb-2">NOT APPLIED</button>
-                <p>Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
-
-                <br>
-
-                <div class="btn flex gap-4">
-                    <button id="interview"
-                        class="border border-green-500 px-2 py-1 rounded-sm text-green-400">INTERVIEW</button>
-                    <button id="rejected"
-                        class="border border-red-500 px-2 py-1 rounded-sm text-red-400">REJECTED</button>
+                    <div class="btn flex gap-4">
+                        <button class="interview-btn border border-green-500 px-2 py-1 rounded-sm text-green-400">INTERVIEW</button>
+                        <button class="rejected-btn border border-red-500 px-2 py-1 rounded-sm text-red-400">REJECTED</button>
+                    </div>
                 </div>
-            </div>
 
-            <div class="card-right">
-                <i class="fa-regular fa-trash-can"></i>
-            </div>
-
-        </div>
-        <!-- part 06 -->
-        <div class="card-title flex justify-between p-5 bg-gray-100 mt-5 rounded-sm ">
-
-            <div class="card-left">
-                <h2 class="text-2xl font-semibold mb-1">MegaCorp Solutions</h2>
-                <p>JavaScript Developer</p>
-
-                <br>
-
-                <p>New York, NY • Full-time • $130,000 - $170,00</p>
-
-                <br>
-
-                <button id="notPpplied" class=" px-2 py-1 rounded-sm bg-slate-300 mb-2">NOT APPLIED</button>
-                <p>Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
-
-                <br>
-
-                <div class="btn flex gap-4">
-                    <button id="interview"
-                        class="border border-green-500 px-2 py-1 rounded-sm text-green-400">INTERVIEW</button>
-                    <button id="rejected"
-                        class="border border-red-500 px-2 py-1 rounded-sm text-red-400">REJECTED</button>
+                <div class="card-right">
+                    <i class="fa-regular fa-trash-can"></i>
                 </div>
+
             </div>
-
-            <div class="card-right">
-                <i class="fa-regular fa-trash-can"></i>
-            </div>
-
-        </div>
-        <!-- part 07 -->
-        <div class="card-title flex justify-between p-5 bg-gray-100 mt-5 rounded-sm ">
-
-            <div class="card-left">
-                <h2 class="text-2xl font-semibold mb-1">StartupXYZ</h2>
-                <p>Full Stack Engineer</p>
-
-                <br>
-
-                <p>Remote • Full-time • $120,000 - $160,000</p>
-
-                <br>
-
-                <button id="notPpplied" class=" px-2 py-1 rounded-sm bg-slate-300 mb-2">NOT APPLIED</button>
-                <p>Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
-
-                <br>
-
-                <div class="btn flex gap-4">
-                    <button id="interview"
-                        class="border border-green-500 px-2 py-1 rounded-sm text-green-400">INTERVIEW</button>
-                    <button id="rejected"
-                        class="border border-red-500 px-2 py-1 rounded-sm text-red-400">REJECTED</button>
-                </div>
-            </div>
-
-            <div class="card-right">
-                <i class="fa-regular fa-trash-can"></i>
-            </div>
-
-        </div>
-        <!-- part 08 -->
-        <div class="card-title flex justify-between p-5 bg-gray-100 mt-5 rounded-sm ">
-
-            <div class="card-left">
-                <h2 class="text-2xl font-semibold mb-1">TechCorp Industries</h2>
-                <p>Senior Frontend Developer</p>
-
-                <br>
-
-                <p>San Francisco, CA • Full-time • $130,000 - $175,000</p>
-
-                <br>
-                
-                <button id="notPpplied" class=" px-2 py-1 rounded-sm bg-slate-300 mb-2">NOT APPLIED</button>
-                <p>We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
-                
-                <br>
-
-                <div class="btn flex gap-4">
-                    <button id="interview"
-                        class="border border-green-500 px-2 py-1 rounded-sm text-green-400">INTERVIEW</button>
-                    <button id="rejected"
-                        class="border border-red-500 px-2 py-1 rounded-sm text-red-400">REJECTED</button>
-                </div>
-            </div>
-
-            <div class="card-right">
-                <i class="fa-regular fa-trash-can"></i>
-            </div>
-
+            <!-- part 04 -->
+            
+            <!-- part 05 -->
+            
+            <!-- part 06 -->
+            
+            <!-- part 07 -->
+       
+            <!-- part 08 -->
+            
         </div>
 
     </section>
-    <script>
-    // ১. প্রয়োজনীয় সব এলিমেন্টগুলো ধরুন
-    const totalCountEl = document.getElementById('total');
-    const interviewCountEl = document.getElementById('interview');
-    const rejectedCountEl = document.getElementById('Rejected');
-    const jobCards = document.querySelectorAll('.card-title'); // সব জবের কার্ডগুলো
-
-    let interviewCount = 0;
-    let rejectedCount = 0;
-    let totalJobs = jobCards.length;
-
-    // ২. প্রতিটি কার্ডের জন্য লজিক সেট করুন
-    jobCards.forEach((card) => {
-        const interviewBtn = card.querySelector('.btn button:first-child');
-        const rejectedBtn = card.querySelector('.btn button:last-child');
-        const deleteBtn = card.querySelector('.card-right i');
-        const statusBadge = card.querySelector('button:not(.border)');
-
-        // ইন্টারভিউ বাটনে ক্লিক করলে
-        interviewBtn.onclick = function() {
-            if (!interviewBtn.classList.contains('bg-green-500')) {
-                // যদি আগে রিজেক্ট করা থাকে, সেটা কমান
-                if (rejectedBtn.classList.contains('bg-red-500')) {
-                    rejectedCount--;
-                    rejectedBtn.classList.remove('bg-red-500', 'text-white');
-                }
-                
-                interviewCount++;
-                interviewBtn.classList.add('bg-green-500', 'text-white');
-                statusBadge.textContent = "INTERVIEW";
-                statusBadge.className = "px-2 py-1 rounded-sm bg-green-200 text-green-700 mb-2";
-                updateDashboard();
-            }
-        };
-
-        // রিজেক্ট বাটনে ক্লিক করলে
-        rejectedBtn.onclick = function() {
-            if (!rejectedBtn.classList.contains('bg-red-500')) {
-                // যদি আগে ইন্টারভিউ সিলেক্ট করা থাকে, সেটা কমান
-                if (interviewBtn.classList.contains('bg-green-500')) {
-                    interviewCount--;
-                    interviewBtn.classList.remove('bg-green-500', 'text-white');
-                }
-
-                rejectedCount++;
-                rejectedBtn.classList.add('bg-red-500', 'text-white');
-                statusBadge.textContent = "REJECTED";
-                statusBadge.className = "px-2 py-1 rounded-sm bg-red-200 text-red-700 mb-2";
-                updateDashboard();
-            }
-        };
-
-        // ডিলিট বাটনে ক্লিক করলে (Challenge Part)
-        deleteBtn.onclick = function() {
-            // যদি কার্ডটি ইন্টারভিউ বা রিজেক্ট অবস্থায় থাকে, কাউন্ট কমান
-            if (interviewBtn.classList.contains('bg-green-500')) interviewCount--;
-            if (rejectedBtn.classList.contains('bg-red-500')) rejectedCount--;
-            
-            totalJobs--;
-            card.remove(); // কার্ডটি মুছে ফেলুন
-            updateDashboard();
-        };
-    });
-
-    // ৩. ড্যাশবোর্ড আপডেট করার ফাংশন
-    function updateDashboard() {
-        totalCountEl.textContent = totalJobs;
-        interviewCountEl.textContent = interviewCount;
-        rejectedCountEl.textContent = rejectedCount;
-        document.querySelector('.heading-right').textContent = totalJobs + " jobs";
-    }
-</script>
 
 
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
